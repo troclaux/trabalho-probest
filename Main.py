@@ -1,7 +1,8 @@
-#questao 1.a = P(X=x) = (x-1)!/(10^(k-1))
+#questao 1.a = P(X=x) = (x-1)!/(10^(x-1))
 #E(X) = 1*(0/10) + 2*(1/10) + 3*(2/10) + 4*(3/10) + 5*(4/10) + 6*(5/10) + 7*(6/10) + 8*(7/10) + 9*(8/10) + 10*(9/10) + 11*(10/10)
 
 from random import randint
+import math
 
 def simula_questao_1(numero_de_simulacoes):
     lista_dos_x = []
@@ -28,5 +29,11 @@ def simula_questao_1(numero_de_simulacoes):
     print(str(lista_dos_x))
     print('media: ', media)
 
+def calcula_probabilidade(x):
+    probabilidade = math.factorial(x-1)/pow(10,x-1)
+    print('probabilidade: ', probabilidade)
+    return probabilidade
 
-simula_questao_1(10)
+
+#simula_questao_1(10)
+calcula_probabilidade(4)
