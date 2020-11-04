@@ -4,19 +4,25 @@
 from random import randint
 
 def simula_questao_1(numero_de_simulacoes):
-    bolas_sorteadas = [False] * 11
-    print(str(bolas_sorteadas))
     #loop para simular a quantidade de vezes desejada
     for i in range(numero_de_simulacoes):
         #enquanto nao sortear um numero igual
+        #x vai ser o numero de repeticoes ate ser sorteada uma bola 2 vezes
         x = 0
+        media = float(0)
+        #vetor que vai armazenar as bolas que foram sorteadas
+        bolas_sorteadas = [False] * 12
         for j in range(11):
-            x+=1
+            x=x+1
             bola_sorteada = randint(1, 10)
             print('bola sorteada: ', bola_sorteada)
-            if( bolas_sorteadas[bola_sorteada-1] == True ):
+            if( bolas_sorteadas[bola_sorteada] == True ):
+                media = media + x
+                print(str(bolas_sorteadas))
                 print("x: ", x)
-                return x
-            bolas_sorteadas[bola_sorteada-1] = True
+                break
+            bolas_sorteadas[bola_sorteada] = True
+    media = media/numero_de_simulacoes
+    print('media: ', media)
 
-simula_questao_1(1)
+simula_questao_1(10)
