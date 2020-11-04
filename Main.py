@@ -18,6 +18,7 @@ def simula_questao_1(numero_de_simulacoes):
             x=x+1
             bola_sorteada = randint(1, 10)
             print('bola sorteada: ', bola_sorteada)
+            #caso a bola sorteada seja repetida
             if( bolas_sorteadas[bola_sorteada] == True ):
                 media = media + x
                 print(str(bolas_sorteadas))
@@ -34,6 +35,14 @@ def calcula_probabilidade(x):
     print('probabilidade: ', probabilidade)
     return probabilidade
 
+def calcula_esperanca():
+    esperanca = float(0)
+    for i in range(11):
+        esperanca = esperanca + (i+1)*calcula_probabilidade(i+1)
+    print('esperanca: ', esperanca)
+    return esperanca
 
-#simula_questao_1(10)
+
+#simula_questao_1(100)
 calcula_probabilidade(4)
+calcula_esperanca()
