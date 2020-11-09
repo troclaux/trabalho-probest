@@ -1,0 +1,2 @@
+questao 1)
+a) A função de probabilidade teórica da variével aleatória é (9! * (x-1))/((11-x)! * (10^(x-1)))

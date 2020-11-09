@@ -1,4 +1,4 @@
-#questao 1.a = P(X=x) = (x-1)!/(10^(x-1))
+#questao 1.a = P(X=x) = (factorial(9) * (x-1))/(factorial(11-x) * pow(10,(x-1))), para 1 < x < 12
 #E(X) = 1*(0/10) + 2*(1/10) + 3*(2/10) + 4*(3/10) + 5*(4/10) + 6*(5/10) + 7*(6/10) + 8*(7/10) + 9*(8/10) + 10*(9/10) + 11*(10/10)
 
 from random import randint
@@ -44,5 +44,5 @@ def calcula_esperanca():
 
 
 #simula_questao_1(100)
-calcula_probabilidade(4)
-calcula_esperanca()
+# calcula_probabilidade(4)
+# calcula_esperanca()
