@@ -50,7 +50,6 @@ def checa_se_todos_os_itens_da_lista_sao_1(lista):
 
 def simula_questao_4(numero_simulacoes):
     for i in range(numero_simulacoes):
-        posicaoAtual = None
         #vetor com as posicoes de cada nó iniciadas em 0, exceto a posição 0, que é onde a partícula inicia
         nodes = [1,0,0,0,0,0]
         #nodes[i] = 0 := ainda não passou pela posição i
