@@ -31,7 +31,7 @@ def simula_questao_1(numero_de_simulacoes):
     print('media: ', media)
 
 def calcula_probabilidade(x):
-    probabilidade = math.factorial(x-1)/pow(10,x-1)
+    probabilidade = (math.factorial(9) * (x-1))/(math.factorial(11-x) * pow(10,x-1))
     print('probabilidade: ', probabilidade)
     return probabilidade
 
