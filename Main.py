@@ -42,6 +42,51 @@ def calcula_esperanca():
     print('esperanca: ', esperanca)
     return esperanca
 
+def checa_se_todos_os_itens_da_lista_sao_1(lista):
+    for i in lista:
+        if i != 1:
+            return False
+    return True
+
+def simula_questao_4(numero_simulacoes):
+    for i in range(numero_simulacoes):
+        posicao = None
+        #vetor com as posicoes de cada nó iniciadas em 0, exceto a posição 0, que é onde a partícula inicia
+        nodes = [1,0,0,0,0,0]
+        #nodes[i] = 0 := ainda não passou pela posição i
+        #nodes[i] = 1 := já passou pela posição i
+
+        movimentos = 0
+        #numero de movimentos comeca em zero
+
+        movimentosMinimosPraVisitarTodasAsPosicoes = 0
+
+        posicaoAtual = 0
+        #posicao inicial eh zero
+        proximaPosicao = None
+        #variável binária que diz se a próxima posição vai ser i+1 ou i-1
+
+        while(checa_se_todos_os_itens_da_lista_sao_1(nodes)):
+            proximaPosicao = randint(0,1)
+            if proximaPosicao == 0:
+                posicaoAtual = posicaoAtual - 1
+            else: 
+                posicaoAtual = posicaoAtual + 1
+            if posicaoAtual == 6:
+                posicaoAtual = 0
+            #checar se posso colocar um elif ao inves de if na linha abaixo
+            if posicaoAtual == -1:
+                posicaoAtual = 5
+            if nodes[posicaoAtual] == 0:
+                nodes[posicaoAtual] = 1
+            movimentos = movimentos + 1
+            #checar se tem numero de iteracoes correto
+            for j in range(4):
+                if nodes[j] == 0:
+                    break
+                    #se ainda tiver alguma posição não visitada, nem preciso olhar as outras
+                movimentosMinimosPraVisitarTodasAsPosicoes = movimentos
+        return movimentosMinimosPraVisitarTodasAsPosicoes
 
 #simula_questao_1(100)
 calcula_probabilidade(4)
