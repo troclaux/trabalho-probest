@@ -59,3 +59,39 @@ calcula a esperança():
         esperanca = esperanca + (i)*calcula_probabilidade(i)
     imprime a esperança
     retorna a esperança
+
+
+questao 3)
+
+algoritmo FuncaoQuestao3(x):
+    Retorno 4*(x**2)*math.exp(-3*x**2), que é a função f(x) dada no enunciado;
+
+Função que calcula a aproximação da integral usando Monte Carlo
+MonteCarlo():
+    a = Limite inferior de integração;
+    b = Limite superior de integração;
+
+    N = Número de pontos, escolhidos aleatoriamente, para realizar o método de Monte Carlo;
+
+    pontos = Vetor, de tamanho N, que armazena os pontos escolhidos. É iniciado com todos os valores igual a zero, para poder armazenar os pontos depois;
+
+    Para todo número i, tal que 0 <= i < N:
+        pontos[i] = Recebe um número aleatório;
+
+    somatorio = 0.0, variável que armazenará o valor do somatório;
+
+    Para todo número i, tal que 0 <= i < N:
+	somatorio = somatorio + FuncaoQueQueroIntegrar(pontos[i]). Em outras palavras, somo f(pontos[i]) ao somatório;
+
+    integralAproximada = ((b-a)/N)*somatorio, que é a fórmula da aproximação da integral através de Monte Carlo;
+
+    retorno integralAproximada;
+
+Função Simula_Questao3(k)
+    resultadoSimulacao = 0, variável que armazena o resultado da simulação atual;
+
+    Para todo número i, tal que 0 <= i < k:
+        resultadoSimulacao = Faço uma simulação de Monte Carlo;
+        Escrevo o número da simulação, seguido de seu resultado;
+
+Executo a função Simula_Questao3() 5000 vezes;

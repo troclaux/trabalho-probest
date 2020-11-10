@@ -3,6 +3,8 @@
 
 from random import randint
 import math
+from scipy import random
+import numpy
 
 def simula_questao_1(numero_de_simulacoes):
     lista_dos_x = []
@@ -52,6 +54,37 @@ def calcula_esperanca():
     return esperanca
 
 
-simula_questao_1(5000)
+def FuncaoQuestao3(x):
+    return 4*(x**2)*math.exp(-3*x**2)
+    
+def MonteCarlo():
+    a = -99999
+    b = 99999
+
+    somatorio = 0.0
+
+    N = 10000
+    pontos = numpy.zeros(N)
+
+    for i in range(len(pontos)):
+        pontos[i] = random.uniform(a,b)
+        #vetor com os pontos selecionados aleatoriamente
+    
+    for i in range(N):
+        somatorio += FuncaoQuestao3(pontos[i])
+        
+    integralAproximada = ((b-a)/float(N))*somatorio
+    
+    return integralAproximada
+
+def Simula_Questao3(k):
+    resultadoSimulacao = 0
+
+    for i in range(k):
+        resultadoSimulacao = MonteCarlo()
+        print("Simulacao ", i, ": ", resultadoSimulacao, "\n")
+
+# simula_questao_1(5000)
 # calcula_probabilidade(11)
-calcula_esperanca()
+# calcula_esperanca()
+Simula_Questao3(5000)
