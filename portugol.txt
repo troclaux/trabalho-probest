@@ -28,6 +28,7 @@ simula questao 1 (numero de simulações)
     imprime lista de todos os valores de x
     imprime média
 
+calcula probabilidade vai receber abaixo o x desejado como parametro
 calcula probabilidade de x da questao 1:
     se x > 11:
         retorna q a probabilidade é zero
