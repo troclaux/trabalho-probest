@@ -3,14 +3,14 @@ a) A função de probabilidade teórica da variével aleatória é P(X=x) = (9! 
 
 explicando o codigo:
 
-a declaracao do simulador da questao 1 vai receber como parametro o numero de simulacoes desejado pelo usuario
+a declaracao do simulador da questao 1 vai receber como parametro o numero de simulações desejado pelo usuario
 
-simula questao 1 (numero de simulacoes)
+simula questao 1 (numero de simulações)
     inicializa um vetor que vai armazenar todos os x simulados
 
-    inicializa media como zero (nao se preocupe, o x de cada iteracao será adicionado nessa variável e depois essa variável vai ser dividida pelo número de iterações)
+    inicializa média como zero (nao se preocupe, o x de cada iteracao será adicionado nessa variável e depois essa variável vai ser dividida pelo número de iterações)
 
-    itera o numero de simulacoes desejado:
+    itera o numero de simulações desejado:
 
         inicializa um vetor que armazena quais bolas ja foram sorteadas
 
@@ -19,11 +19,35 @@ simula questao 1 (numero de simulacoes)
         sorteia uma bola (gera um numero aleatorio entre 1 e 10)
 
         se a bola sorteada jé estiver dentro do vetor de bolas_sorteadas:
-            adiciona x na media
-            adiciona x no vetor de resultados de simulacoes
+            adiciona x na média
+            adiciona x no vetor de resultados de simulações
             para de sortear bolas e termina essa simulação
         
         se a bola nao estiver no vetor de bolas sorteadas, adiciona ela no vetor
     divide média pelo número de simulações
     imprime lista de todos os valores de x
-    imprime media
+    imprime média
+
+calcula probabilidade de x da questao 1:
+    se x > 11:
+        retorna q a probabilidade é zero
+
+    inicializa probabilidade como 1
+
+    inicializa buffer como 9
+
+    para i variando de 2 ate 11 faça:
+        se i for igual a 11:
+            multiplica probabilidade por (x-1)/10
+        senao:
+            multiplica probabilidade por (buffer/10)
+            subtrai 1 do buffer
+    imprime a probabilidade
+    retorna a probabilidade
+
+calcula a esperança
+    inicializa esperança com valor zero
+    para i variando de 2 ate 12 faça:
+        aqui acontece o somatorio de i*P(X=i), que é armazenado na variavel esperança
+    imprime a esperança
+    retorna a esperança
