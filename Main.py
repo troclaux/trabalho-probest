@@ -32,7 +32,6 @@ def simula_questao_1(numero_de_simulacoes):
 
 def calcula_probabilidade(x):
     if(x > 11):
-        print('P(X = ' + str(x) + ') = 0')
         return 0
     probabilidade = float(1)
     buffer = 9
@@ -43,7 +42,6 @@ def calcula_probabilidade(x):
             probabilidade = probabilidade * (buffer/10)
             buffer = buffer - 1
         # print(i)
-    print('P(X = ' + str(x) + ') = ' + str(probabilidade))
     return probabilidade
 
 def calcula_esperanca():

@@ -1,22 +1,28 @@
-questao 1)
-a) A função de probabilidade teórica da variével aleatória é P(X=x) = (9! * (x-1))/((11-x)! * (10^(x-1)))
+Trabalho opcional de probabilidade e estatística
 
-explicando o codigo:
+alunos: 
+Arthur Moreira de Albuquerque DRE 114146877
+Miguel Santos de Araujo do Nascimento DRE 115191914
 
-a declaracao do simulador da questao 1 vai receber como parametro o numero de simulações desejado pelo usuario
+Questão 1)
+a) A função de probabilidade teórica da variável aleatória é P(X=x) = (9! * (x-1))/((11-x)! * (10^(x-1)))
 
-algoritmo de simular questao 1 (numero de simulações)
-    inicializa um vetor lista_dos_x que vai armazenar todos os x simulados
+explicando o código:
 
-    media = 0 (nao se preocupe, o x de cada iteracao será adicionado nessa variável e depois essa variável vai ser dividida pelo número de iterações)
+a declaração do simulador da questão 1 vai receber como parâmetro o número de simulações desejado pelo usuário
 
-    executa esse bloco pelo numero de simulações fornecido como parâmetro do algoritmo:
+algoritmo de simular questao 1 (número de simulações)
+    inicializa vetor lista_dos_x que vai armazenar todos os x simulados
+
+    media = 0 (não se preocupe, o x de cada iteração será adicionado nessa variável e depois essa variável vai ser dividida pelo número de iterações)
+
+    executa esse bloco pelo número de simulações fornecido como parâmetro do algoritmo:
 
         inicializa um vetor bolas_sorteadas que armazena quais bolas ja foram sorteadas
 
         x=0
 
-        bola sorteada = numero aleatorio no intervalo de 1 ate 10
+        bola sorteada = número aleatorio no intervalo de 1 até 10
 
         se a bola sorteada já estiver dentro do vetor de bolas_sorteadas:
             media = media + x
