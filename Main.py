@@ -31,18 +31,33 @@ def simula_questao_1(numero_de_simulacoes):
     print('media: ', media)
 
 def calcula_probabilidade(x):
-    probabilidade = (math.factorial(9) * (x-1))/(math.factorial(11-x) * pow(10,x-1))
-    print('probabilidade: ', probabilidade)
+    if(x == 11):
+        print('P(X = ' + str(x) + ') = 1')
+        return 1
+    if(x > 11):
+        print('P(X = ' + str(x) + ') = 0')
+        return 0
+    probabilidade = float(1)
+    buffer = 9
+    for i in range(2, x + 1):
+        if i == x:
+            probabilidade = probabilidade * (x - 1)/10
+        else:
+            probabilidade = probabilidade * (buffer/10)
+            buffer = buffer - 1
+        # print(i)
+    print('P(X = ' + str(x) + ') = ' + str(probabilidade))
     return probabilidade
 
 def calcula_esperanca():
     esperanca = float(0)
-    for i in range(11):
+    for i in range(2,12):
+        print('esperanca: ', i)
         esperanca = esperanca + (i+1)*calcula_probabilidade(i+1)
     print('esperanca: ', esperanca)
     return esperanca
 
 
 #simula_questao_1(100)
-# calcula_probabilidade(4)
+calcula_probabilidade(10)
 # calcula_esperanca()
