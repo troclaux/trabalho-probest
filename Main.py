@@ -52,12 +52,12 @@ def calcula_probabilidade(x):
 def calcula_esperanca():
     esperanca = float(0)
     for i in range(2,12):
-        print('esperanca: ', i)
-        esperanca = esperanca + (i+1)*calcula_probabilidade(i+1)
+        esperanca = esperanca + (i)*calcula_probabilidade(i)
+        print('iteracao esperanca: ', esperanca)
     print('esperanca: ', esperanca)
     return esperanca
 
 
 #simula_questao_1(100)
-calcula_probabilidade(10)
-# calcula_esperanca()
+calcula_probabilidade(11)
+calcula_esperanca()
