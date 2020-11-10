@@ -5,50 +5,51 @@ explicando o codigo:
 
 a declaracao do simulador da questao 1 vai receber como parametro o numero de simulações desejado pelo usuario
 
-simula questao 1 (numero de simulações)
-    inicializa um vetor que vai armazenar todos os x simulados
+algoritmo de simular questao 1 (numero de simulações)
+    inicializa um vetor lista_dos_x que vai armazenar todos os x simulados
 
-    inicializa média como zero (nao se preocupe, o x de cada iteracao será adicionado nessa variável e depois essa variável vai ser dividida pelo número de iterações)
+    media = 0 (nao se preocupe, o x de cada iteracao será adicionado nessa variável e depois essa variável vai ser dividida pelo número de iterações)
 
-    itera o numero de simulações desejado:
+    executa esse bloco pelo numero de simulações fornecido como parâmetro do algoritmo:
 
-        inicializa um vetor que armazena quais bolas ja foram sorteadas
+        inicializa um vetor bolas_sorteadas que armazena quais bolas ja foram sorteadas
 
-        x é inicializado como zero e vai ser incrementado a cada sorteio de bola, até sair a bola repetida
+        x=0
 
-        sorteia uma bola (gera um numero aleatorio entre 1 e 10)
+        bola sorteada = numero aleatorio no intervalo de 1 ate 10
 
-        se a bola sorteada jé estiver dentro do vetor de bolas_sorteadas:
-            adiciona x na média
-            adiciona x no vetor de resultados de simulações
+        se a bola sorteada já estiver dentro do vetor de bolas_sorteadas:
+            media = media + x
+            adiciona x no vetor lista_dos_x
             para de sortear bolas e termina essa simulação
         
-        se a bola nao estiver no vetor de bolas sorteadas, adiciona ela no vetor
-    divide média pelo número de simulações
-    imprime lista de todos os valores de x
-    imprime média
+        se a bola nao estiver no vetor de bolas sorteadas:
+            adiciona ela no vetor bolas_sorteadas
+    media = media/numero_de_simulacoes
+    imprime lista_dos_x
+    imprime media
 
 calcula probabilidade vai receber abaixo o x desejado como parametro
-calcula probabilidade de x da questao 1:
+calcula_probabilidade(x):
     se x > 11:
         retorna q a probabilidade é zero
 
-    inicializa probabilidade como 1
+    probabilidade = 1
 
-    inicializa buffer como 9
+    buffer = 9
 
     para i variando de 2 ate 11 faça:
         se i for igual a 11:
-            multiplica probabilidade por (x-1)/10
+            probabilidade = probabilidade * (x - 1)/10
         senao:
-            multiplica probabilidade por (buffer/10)
-            subtrai 1 do buffer
+            probabilidade = probabilidade * (buffer/10)
+            buffer = buffer - 1
     imprime a probabilidade
     retorna a probabilidade
 
-calcula a esperança
-    inicializa esperança com valor zero
+calcula a esperança():
+    esperança = 0
     para i variando de 2 ate 12 faça:
-        aqui acontece o somatorio de i*P(X=i), que é armazenado na variavel esperança
+        esperanca = esperanca + (i)*calcula_probabilidade(i)
     imprime a esperança
     retorna a esperança
