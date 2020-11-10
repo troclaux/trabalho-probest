@@ -28,12 +28,9 @@ def simula_questao_1(numero_de_simulacoes):
             bolas_sorteadas[bola_sorteada] = True
     media = media/numero_de_simulacoes
     print(str(lista_dos_x))
-    print('media: ', media)
+    print('Media das simulações: ', media)
 
 def calcula_probabilidade(x):
-    if(x == 11):
-        print('P(X = ' + str(x) + ') = 1')
-        return 1
     if(x > 11):
         print('P(X = ' + str(x) + ') = 0')
         return 0
@@ -53,11 +50,10 @@ def calcula_esperanca():
     esperanca = float(0)
     for i in range(2,12):
         esperanca = esperanca + (i)*calcula_probabilidade(i)
-        print('iteracao esperanca: ', esperanca)
-    print('esperanca: ', esperanca)
+    print('Esperança: ', esperanca)
     return esperanca
 
 
-#simula_questao_1(100)
-calcula_probabilidade(11)
+simula_questao_1(5000)
+# calcula_probabilidade(11)
 calcula_esperanca()

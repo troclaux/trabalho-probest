@@ -1,2 +1,29 @@
 questao 1)
-a) A função de probabilidade teórica da variével aleatória é (9! * (x-1))/((11-x)! * (10^(x-1)))
+a) A função de probabilidade teórica da variével aleatória é P(X=x) = (9! * (x-1))/((11-x)! * (10^(x-1)))
+
+explicando o codigo:
+
+a declaracao do simulador da questao 1 vai receber como parametro o numero de simulacoes desejado pelo usuario
+
+simula questao 1 (numero de simulacoes)
+    inicializa um vetor que vai armazenar todos os x simulados
+
+    inicializa media como zero (nao se preocupe, o x de cada iteracao será adicionado nessa variável e depois essa variável vai ser dividida pelo número de iterações)
+
+    itera o numero de simulacoes desejado:
+
+        inicializa um vetor que armazena quais bolas ja foram sorteadas
+
+        x é inicializado como zero e vai ser incrementado a cada sorteio de bola, até sair a bola repetida
+
+        sorteia uma bola (gera um numero aleatorio entre 1 e 10)
+
+        se a bola sorteada jé estiver dentro do vetor de bolas_sorteadas:
+            adiciona x na media
+            adiciona x no vetor de resultados de simulacoes
+            para de sortear bolas e termina essa simulação
+        
+        se a bola nao estiver no vetor de bolas sorteadas, adiciona ela no vetor
+    divide média pelo número de simulações
+    imprime lista de todos os valores de x
+    imprime media
